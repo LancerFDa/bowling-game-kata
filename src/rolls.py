@@ -2,7 +2,7 @@ class Game:
     def hitting_pins_regular(self, pins):
         self.pins = pins
 
-    def total(self):
-        for j in self.pins:
-            if "X" != j and "/" != j:
+    def open_frame(self):
+        for pin in self.pins:
+            if "X" != pin and "/" != pin:
                 return 60

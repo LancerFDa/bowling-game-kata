@@ -5,5 +5,5 @@ class ScoreCard:
         self.pins = score_card
 
     def frame_pins(self, pins):
-        pins = list(self.pins.replace('-', '0'))
+        pins = list(pins.replace('-', '0'))
         return sum(int(pin) for pin in pins)

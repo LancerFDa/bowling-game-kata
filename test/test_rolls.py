@@ -21,3 +21,11 @@ def test_symbol_zero():
     total = 82
     score_card = ScoreCard(pins)
     assert score_card.frame_pins(pins) == total
+
+@pytest.mark.spare
+def test_spare_not_extra():
+    # test spare not extra
+    pins = "9-3/613/815/-/8-7/8-"
+    total = 121
+    score_card = ScoreCard(pins)
+    assert score_card.frame_pins(pins) == total

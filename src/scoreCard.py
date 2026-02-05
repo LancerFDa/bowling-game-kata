@@ -7,16 +7,21 @@ class ScoreCard:
         pins = self.pins
         score = list(pins)
         frames = []
-        for i in range(len(pins)):
+        for i,j in enumerate(score):
             if score[i] == "-":
-                score[i] = 0
-        for i in score:
-            frames.append(int(i))
+                frames.append(0)
+            elif score[i]:
+                if score[i] == "/":
+                    frames.append(10 - frames[-1])
+                else : frames.append(int(score[i]))
+        for i,j in enumerate(frames):
+            if frames[i] + frames[i-1] == 10:
+                frames[i] = frames[i] + frames[i+1]
         total = sum(frames)
         return total
     
 
 if __name__=="__main__":
-    ScoreCard("9-9-9-9-9-9-9-9-9-9-").frame_pins()
+    ScoreCard("9-3/613/815/-/8-7/8-").frame_pins("9-3/613/815/-/8-7/8-")
 
     
